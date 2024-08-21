@@ -7,21 +7,11 @@ const initialContactsState = [
   { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
 ];
 
-// the create slice function accepts only one object parameter
-// this object parameter includes the combination of the action and reducer declaration
-// has three required properties that we have to supply in the parameter object
-
 export const contactsSlice = createSlice({
   name: 'contacts',
   initialState: initialContactsState,
 
-  // we passed the reducer property in the parameter object
-  // the reducer object has two properties inside of it which are the action generations
-
   reducers: {
-    // for each action type, we will declare a reducer and/OR the prepare function
-    // reducer function is responsible for modifying the actual state
-    // prepare function is responsible for describing the action payload
     addContact: {
       reducer(state, action) {
         state.push(action.payload);
