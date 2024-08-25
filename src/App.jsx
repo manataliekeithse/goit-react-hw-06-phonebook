@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { ContactForm } from './ContactForm/ContactForm';
-import { Filter } from './Filter/Filter';
-import { ContactList } from './ContactList/ContactList';
+import { ContactForm } from './components/ContactForm/ContactForm';
+import { Filter } from './components/Filter/Filter';
+import { ContactList } from './components/ContactList/ContactList';
 import { useSelector } from 'react-redux';
-import { getContacts, getFilter } from 'redux/selectors';
+import { getContacts, getFilter } from './redux/selectors';
 import { useDispatch } from 'react-redux';
-import { addContact } from 'redux/contactsSlice';
-import { setFilter } from 'redux/filterSlice';
-import { deleteContact } from 'redux/actions';
+import { addContact, deleteContact } from './redux/contactsSlice';
+import { setFilter } from './redux/actions';
 
 const retrievedInitialContacts = () => {
   const savedContacts = JSON.parse(localStorage.getItem('contacts'));

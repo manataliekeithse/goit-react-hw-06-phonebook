@@ -1,4 +1,6 @@
+import { createReducer } from '@reduxjs/toolkit';
 import { ADD_CONTACT, DELETE_CONTACT, SET_FILTER } from './actions';
+import { addContact, deleteContact, setFilter } from './actions';
 
 const initialContactsState = [
   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
@@ -8,9 +10,6 @@ const initialContactsState = [
 ];
 
 const initialFilterState = '';
-
-import { createReducer } from '@reduxjs/toolkit';
-import { addContact, deleteContact, setFilter } from './actions';
 
 export const contactsReducer = createReducer(initialContactsState, {
   [addContact]: (state, action) => [...state, action.payload],
